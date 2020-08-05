@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require navigation
+ *= require utils
+ *= require table
+ *= require dropdown
+ *= require_self
+ */
+
+
+
+body {
+	margin: 0;
+	background-color: #EBE9E5;
+}
+
+h1 {
+	margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 1em;
+  min-height: 100vh;
+}
+
+.grid article {
+  grid-column: 3;
+}
+
+@media all and (max-width: 700px) {
+  aside,
+  article {
+    grid-column: 1 / 6;
+  }
+}
+
+.grid.authenticated {
+  grid-template-columns: 1fr 5fr;
+}
+
+.Main {
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	padding: 1rem;
+}
+
+header, footer {
+  grid-column: 1 / 6;
+}
+
+.grid_table {
+  float: left;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.flex_box {
+  display: flex;
+  justify-content: space-between;
+}

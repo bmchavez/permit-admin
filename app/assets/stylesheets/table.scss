@@ -1,0 +1,52 @@
+.Table {
+  border-radius: 12px;
+  overflow: hidden;
+  filter: drop-shadow(0 4px 4px darken(#f1f2f6, 20%));
+
+	.Table-header {
+		background: #0F4F2C;
+		box-sizing: border-box;
+    color: white;
+    text-transform: uppercase;
+
+    a {
+      color: white;
+    }
+	}
+
+	.Table-body {
+		border: 1px solid #ECEEF3;
+		box-sizing: border-box;
+		border-radius: 0px 0px 12px 12px;
+
+    .Table-cell {
+      color: darken(#9ea7b1, 20%);
+    }
+
+    a {
+      color: #1e8dfb;
+    }
+	}
+
+	.Table-row {
+		background: #f8f8f8;
+    border-top: 1px solid #f1f2f6;
+    border-bottom: 1px solid #f1f2f6;
+    &:nth-child(2n) {
+      background: white;
+    }
+	}
+
+	.Table-row, .Table-header {
+		display: grid;
+		grid-template-columns: repeat(10, 1fr);
+	}
+
+	.Table-cell {
+		padding: 1rem 2rem;
+    text-align: center;
+	}
+}
+.top-tasks{
+  width: 875px;
+}

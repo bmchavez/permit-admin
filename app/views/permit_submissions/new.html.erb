@@ -1,0 +1,34 @@
+<h1>New Permit</h1>
+
+
+<%= form_with(url: permit_submissions_path, method: "post") do |f| %>
+  <%= label_tag(:name, "Name") %>
+  <%= text_field(:permit, :name) %>
+  <%= label_tag(:name, "Equipment") %>
+  <%= text_field(:permit, :equipment) %>
+  <%= label_tag(:name, "Location") %>
+  <%= text_field(:permit, :location) %>
+  <%= label_tag(:name, "Permittee") %>
+  <%= text_field(:permit, :permittee) %>
+  <%= label_tag(:name, "Agency") %>
+  <%= text_field(:permit, :agency) %>
+  <%= label_tag(:name, "Status") %>
+  <%= select(:permit, :status, [["accepted", "accepted"], ["denied", "denied"], ["filed", "filed"]]) %>
+
+  <!-- For Development purposes: In order to create a new permit you can get the PermitType id from the console and hard code it below.
+       -->
+  <!-- <%= label_tag(:name, "Permit Type") %>
+  <%= select(:permit, :permit_type_id, [["Traffic Permit", "5307b07a-f035-4263-b7b4-9da7af7cf78b"], ["Waste Permit", "Waste Permit"], ["NYDoH Food", "NYDoH Food"]]) %> -->
+
+
+  <%= label_tag(:name, "Deadline") %>
+  <%= date_field(:permit, :deadline) %>
+  <%= f.fields_for :permit_documents do |document_form| %>
+      <%= document_form.label :document %>
+      <%= document_form.file_field :document %>
+  <% end %>
+
+  <%= submit_tag("Create") %>
+<% end %>
+
+
